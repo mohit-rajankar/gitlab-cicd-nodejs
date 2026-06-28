@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudMesh Todo App</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #111827, #1e293b);
+            color: #f1f5f9;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.3rem;
+            margin-bottom: 30px;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        h1 span {
+            color: #38bdf8;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+            padding: 25px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            background: #1e293b;
+            margin-bottom: 15px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            transition: 0.25s ease;
+            position: relative;
+            font-size: 17px;
+            color: #f8fafc;
+        }
+
+        ul li:hover {
+            transform: translateY(-2px);
+            border-color: #38bdf8;
+            box-shadow: 0 6px 18px rgba(56,189,248,.25);
+        }
+
+        .delete-btn,
+        .edit-btn {
+            text-decoration: none;
+            font-size: 18px;
+            transition: .2s;
+        }
+
+        .delete-btn {
+            position: absolute;
+            right: 18px;
+            top: 16px;
+            color: #ef4444;
+        }
+
+        .delete-btn:hover {
+            color: #ff6b6b;
+        }
+
+        .edit-btn {
+            position: absolute;
+            right: 50px;
+            top: 16px;
+            color: #facc15;
+        }
+
+        .edit-btn:hover {
+            color: #fde047;
+        }
+
+        form {
+            margin-top: 30px;
+            background: rgba(15,23,42,.95);
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: #cbd5e1;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 14px;
+            background: #0f172a;
+            color: white;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            outline: none;
+            font-size: 16px;
+            transition: .2s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 10px rgba(56,189,248,.3);
+        }
+
+        input[type="submit"] {
+            margin-top: 18px;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #06b6d4, #2563eb);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .25s;
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37,99,235,.35);
+        }
+
+        ::placeholder {
+            color: #94a3b8;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1><span>☁ CloudMesh</span> To-Do WebApp</h1>
+
+    <div class="card">
+
+        <ul>
+            <% todolist.forEach(function(todo, index) { %>
+            <li>
+                <a href="/todo/delete/<%= index %>" class="delete-btn">✖</a>
+                <a href="/todo/<%= index %>" class="edit-btn">✎</a>
+
+                <%- todo %>
+
+            </li>
+            <% }); %>
+        </ul>
+
+        <form action="/todo/add/" method="post">
+
+            <label for="newtodo">Add a new task</label>
+
+            <input
+                type="text"
+                name="newtodo"
+                id="newtodo"
+                placeholder="Enter your next task..."
+                autofocus
+            >
+
+            <input type="submit" value="Add Task">
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
