@@ -278,7 +278,7 @@ docker logs <container_id>
 
 ## Running Application
 
-![webapp](screenshots/webapp)
+![webapp](screenshots/webapp.png)
 
 ---
 
