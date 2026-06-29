@@ -266,19 +266,19 @@ docker logs <container_id>
 
 ## GitLab Pipeline
 
-(screenshots/gitlab_pipeline.png)
+![pipeline](screenshots/gitlab_pipeline.png)
 
 ---
 
 ## GitLab Runner
 
-(screenshots/runner.png)
+![runner](screenshots/runner.png)
 
 ---
 
 ## Running Application
 
-(screenshots/webapp)
+![webapp](screenshots/webapp)
 
 ---
 
