@@ -266,25 +266,19 @@ docker logs <container_id>
 
 ## GitLab Pipeline
 
-(Add screenshot)
+(screenshots/gitlab_pipeline.png)
 
 ---
 
 ## GitLab Runner
 
-(Add screenshot)
-
----
-
-## Docker Hub Image
-
-(Add screenshot)
+(screenshots/runner.png)
 
 ---
 
 ## Running Application
 
-(Add screenshot)
+(screenshots/webapp)
 
 ---
 
